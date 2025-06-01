@@ -359,10 +359,11 @@ label { }
     padding-bottom: 135px;
     background: 
         linear-gradient(rgba(36, 39, 38, 0.5), rgba(36, 39, 38, 0.5)),
-        url(../images/hero-img.png) no-repeat top center;
+        url(../images/dora-header-raw.png) no-repeat top center;
     background-size: cover;
-    background-attachment: scroll;
+    background-attachment: fixed;
 }
+
 .hero-caption { padding-top: 100px; padding-bottom: 100px; }
 .hero-title { font-size: 46px; color: #fff; line-height: 58px; font-weight: 600; margin-bottom: 30px; letter-spacing: -1px; }
 .hero-text { font-size: 22px; color: #fff; margin-bottom: 30px; }
@@ -448,7 +449,7 @@ label { }
 /*----------------------------------------------
     5.4 Page Header
 ----------------------------------------------*/
-.page-header { background: linear-gradient(rgba(36, 39, 38, 0.5), rgba(36, 39, 38, 0.5)), rgba(36, 39, 38, 0.5) url(../images/page-header.jpg) no-repeat center; background-size: cover; margin: 0; border-bottom: none; padding-bottom: 0px; }
+.page-header { background: linear-gradient(rgba(36, 39, 38, 0.5), rgba(36, 39, 38, 0.5)), rgba(36, 39, 38, 0.5) url(../images/dora-header-raw.png) no-repeat center; background-size: cover; margin: 0; border-bottom: none; padding-bottom: 0px; }
 .page-caption { padding: 120px 0px; position: relative; z-index: 1; color: #fff; text-align: center; }
 .page-title { color: #fff;  font-size: 40px; font-weight: 400; letter-spacing: -1px; }
 .breadcrumb { }
@@ -853,7 +854,7 @@ opacity: .5; }
 /*card styling*/
 .card img {
     border-radius: 20px;
-    object-fit: none;
+    object-fit: 100px;
 }
 
 
@@ -886,7 +887,7 @@ opacity: .5; }
   overflow-x: auto;
   gap: 1rem;
   scroll-snap-type: x mandatory;
-  padding: 2rem 0;
+  padding: 2rem 1rem;
 }
 
 .card {
@@ -898,7 +899,21 @@ opacity: .5; }
   padding: 1.5rem;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
+.card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 0.75rem;
+  margin-bottom: 1rem;
+  max-width: 200px;
+  height: auto;
+}
+
 
 .card h4 {
   color: #aa9144;
@@ -953,7 +968,7 @@ textarea {
 .section-break {
   position: relative;
   padding: 120px 20px;
-  background: linear-gradient(rgba(30, 28, 24, 0.8), rgba(30, 28, 24, 0.8)), url('../images/section-bg.jpg') no-repeat center;
+  background: linear-gradient(rgba(30, 28, 24, 0.8), rgba(30, 28, 24, 0.8)), url('../images/dora-header-raw.png') no-repeat center;
   background-size: cover;
   color: #fff;
   text-align: center;
@@ -1004,7 +1019,7 @@ textarea {
 }
 
 /* Responsive adjustment for carousel */
-@media (max-width: 768px) {
+@media (max-width: 800px) {
   .carousel {
     flex-direction: column;
     gap: 2rem;
@@ -1015,3 +1030,4 @@ textarea {
     width: 100%;
   }
 }
+
