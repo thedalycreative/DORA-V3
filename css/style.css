@@ -855,3 +855,163 @@ opacity: .5; }
     border-radius: 20px;
     object-fit: none;
 }
+
+
+@charset "UTF-8";
+
+/* Existing stylesheet preserved above */
+
+/* Additional styles for DORA style guide */
+
+/* Hero CTA Button */
+.btn-outline {
+  border: 2px solid #fff;
+  background: transparent;
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: background 0.3s, color 0.3s;
+}
+
+.btn-outline:hover {
+  background: #fff;
+  color: #18150d;
+}
+
+/* Carousel section */
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  scroll-snap-type: x mandatory;
+  padding: 2rem 0;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 1rem;
+  min-width: 300px;
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  padding: 1.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.card h4 {
+  color: #aa9144;
+  font-size: 20px;
+  margin: 1rem 0 0.5rem;
+}
+
+.card p {
+  font-size: 14px;
+  color: #333;
+}
+
+/* AI Prompt Dropdown Section */
+.dropdown-section {
+  padding: 60px 20px;
+  background-color: #f4f1ec;
+}
+
+.dropdown-section select,
+.dropdown-section textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Circular Icon Logo */
+.circle-icon-wrapper {
+  background: #fff;
+  border-radius: 50%;
+  padding: 20px;
+  display: inline-block;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  margin-bottom: 10px;
+}
+
+.circle-icon-wrapper img {
+  display: block;
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+/* Section breaks with overlays */
+.section-break {
+  position: relative;
+  padding: 120px 20px;
+  background: linear-gradient(rgba(30, 28, 24, 0.8), rgba(30, 28, 24, 0.8)), url('../images/section-bg.jpg') no-repeat center;
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+}
+
+.section-break h2 {
+  font-size: 36px;
+  color: #fff;
+}
+
+/* Logo showcase */
+.logo-showcase {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 3rem 0;
+}
+
+.logo-showcase img {
+  max-width: 220px;
+  height: auto;
+  border: 1px solid #eee;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 8px;
+}
+
+/* Abstract logo note */
+.abstract-logo-note {
+  background: #f4f1ec;
+  padding: 2rem;
+  border-left: 5px solid #aa9144;
+  font-style: italic;
+  margin: 2rem 0;
+  font-size: 16px;
+}
+
+/* Fade-in animation for scroll */
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.8s ease-in;
+}
+
+.fade-in.visible {
+  opacity: 1;
+}
+
+/* Responsive adjustment for carousel */
+@media (max-width: 768px) {
+  .carousel {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .card {
+    min-width: auto;
+    width: 100%;
+  }
+}
