@@ -246,14 +246,15 @@ label { }
 .bg-primary { background-color: #aa9144; }
 .bg-default { background-color: #f4f1ec; }
 .bg-white { background-color: #fff; }
-.outline { border: 1px solid #e5e7ec; }
+.outline { border-radius: 20px solid #e5e7ec; }
 .section-title { }
 .title { color: #18150d; }
 .small-title{color: #84837f; font-size: 13px; letter-spacing: 1px; margin-bottom: 20px;}
 .text-white { color: #fff; }
 .primary-sidebar { }
 .secondary-sidebar { }
-.well-block{background-color: #fff;padding: 40px;}
+
+.well-block{background-color: #fff;padding: 40px; border-radius: 20;}
 
 /*--------------------------------
 4.5 Features Block 
@@ -262,7 +263,7 @@ label { }
 .feature-icon { margin-bottom: 20px; }
 .feature-left { }
 .feature-left .feature-icon { float: left; }
-.feature-left .feature-content { padding-left: 80px; }
+.feature-left .feature-content { padding-left: 80px; border-radius: 40px; 40px; }
 .feature-center { }
 .feature-center .feature-icon { }
 .feature-center .feature-content { }
@@ -508,12 +509,12 @@ margin-bottom: 8px; padding: 0 0 8px 40px; color: #747474; }
 
 .about-text { line-height: 40px; }
 .about-block { }
-.about-img { }
+.about-img {}
 .about-info { }
 .about-contact { font-size: 18px; color: #8c9292; font-weight: 600; margin-left: 5px; }
 .counter_block { }
-.counter_box { border-bottom: 1px solid #eee; padding: 40px 0px; }
-.counter_number { font-weight: 900; margin-bottom: 0px; }
+.counter_box { border-bottom: 1px solid #eee; padding: 40px px; border-radius: 30px;}
+.counter_number { font-weight: 900; margin-bottom: 20px; }
 .counter_text { font-size: 12px; text-transform: uppercase; letter-spacing: 2px; }
 
 /*-------------------------
@@ -522,7 +523,7 @@ margin-bottom: 8px; padding: 0 0 8px 40px; color: #747474; }
 
 /* service section */
 
-.service-block { margin-bottom: 30px; }
+.service-block { margin-bottom: 10px; }
 .service-img { margin-bottom: 30px; }
 .service-img img { width: 100%; }
 .service-caption { }
@@ -853,8 +854,7 @@ opacity: .5; }
 
 /*card styling*/
 .card img {
-    border-radius: 20px;
-    object-fit: 100px;
+  image-orientation: square 400px; width: auto; border-radius: 20;
 }
 
 
@@ -893,11 +893,11 @@ opacity: .5; }
 .card {
   background: rgba(255, 255, 255, 0.85);
   border-radius: 1rem;
-  min-width: 300px;
+  min-width: 400px;
   flex: 0 0 auto;
   scroll-snap-align: start;
   padding: 1.5rem;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -905,12 +905,12 @@ opacity: .5; }
 }
 
 .card img {
-  width: 100%;
+
   aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: 0.75rem;
   margin-bottom: 1rem;
-  max-width: 200px;
+  max-width: 300px;
   height: auto;
 }
 
@@ -918,7 +918,8 @@ opacity: .5; }
 .card h4 {
   color: #aa9144;
   font-size: 20px;
-  margin: 1rem 0 0.5rem;
+  margin: 1rem 1rem 1rem 1rem;
+  
 }
 
 .card p {
