@@ -862,9 +862,34 @@ opacity: .5; }
 
 /* Existing stylesheet preserved above */
 
-/* Additional styles for DORA style guide */
 
-/* Hero CTA Button */
+
+
+/*
+-----------------------------------------------------------------------------------------------------
+                                    ADDITIONAL STYLES
+-------------------------------------------------------------------------------------------------------------------
+*/
+
+/*-----------------------------------
+        FADE-IN ANIMATION
+-------------------------------------*/
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.8s ease-in;
+}
+
+.fade-in.visible {
+  opacity: 1;
+}
+
+
+
+
+/*---------------------------------------------------------------
+        'CALL TO ACTION' BUTTON
+-----------------------------------------------------------------*/
+
 .btn-outline {
   border: 2px solid #fff;
   background: transparent;
@@ -881,7 +906,9 @@ opacity: .5; }
   color: #18150d;
 }
 
-/* Carousel section */
+/*---------------------------------------------------------------
+        CAROUSEL SELECTION
+-----------------------------------------------------------------*/
 .carousel {
   display: flex;
   overflow-x: auto;
@@ -927,6 +954,76 @@ opacity: .5; }
   color: #333;
 }
 
+
+
+/* Responsive adjustment for carousel */
+
+@media (max-width: 800px) {
+  .carousel {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .card {
+    min-width: auto;
+    width: 100%;
+  }
+}
+
+]
+
+/*---------------------------------------------------------------
+        STYLE GUIDE
+-----------------------------------------------------------------*/
+
+
+/*circular logo*/
+
+.circle-icon-wrapper {
+  background: #fff;
+  border-radius: 50%;
+  padding: 20px;
+  display: inline-block;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  margin-bottom: 10px;
+}
+
+.circle-icon-wrapper img {
+  display: block;
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+  
+/*--- LOGO SHOWCASE ---*/
+.logo-showcase {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 3rem 0;
+}
+
+.logo-showcase img {
+  max-width: 220px;
+  height: auto;
+  border: 1px solid #eee;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 8px;
+}
+
+/*----ABSTRACT LOGO NOTE ---*/
+.abstract-logo-note {
+  background: #f4f1ec;
+  padding: 2rem;
+  border-left: 5px solid #aa9144;
+  font-style: italic;
+  margin: 2rem 0;
+  font-size: 16px;
+}
+
 /* AI Prompt Dropdown Section */
 .dropdown-section {
   padding: 60px 20px;
@@ -948,24 +1045,9 @@ textarea {
   min-height: 120px;
 }
 
-/* Circular Icon Logo */
-.circle-icon-wrapper {
-  background: #fff;
-  border-radius: 50%;
-  padding: 20px;
-  display: inline-block;
-  box-shadow: 0 0 5px rgba(0,0,0,0.1);
-  margin-bottom: 10px;
-}
-
-.circle-icon-wrapper img {
-  display: block;
-  width: 60px;
-  height: 60px;
-  object-fit: contain;
-}
-
-/* Section breaks with overlays */
+/*---------------------------------------------------------------
+        SECTION BREAKS WITH OVERLAYS
+-----------------------------------------------------------------*/
 .section-break {
   position: relative;
   padding: 120px 20px;
@@ -980,55 +1062,123 @@ textarea {
   color: #fff;
 }
 
-/* Logo showcase */
-.logo-showcase {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+/*---------------------------------------------------------------
+        SERVICE FLIP CARDS
+-----------------------------------------------------------------*/
+/* Card Container */
+.flip-card {
+  background-color: transparent;
+  width: 100%; /* Adjust as needed */
+  height: 350px; /* Set a fixed height for consistency */
+  perspective: 1000px; /* This makes the 3D effect possible */
+  border-radius: 8px; /* Match your existing service-block styling */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); /* Soft shadow */
+  transition: box-shadow 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+
+.flip-card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3); /* Slightly stronger shadow on hover */
+}
+
+/* The inner card that will flip */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s; /* Speed of the flip */
+  transform-style: preserve-3d; /* Keep 3D transformation */
+  border-radius: 8px; /* Match parent */
+}
+
+/* Do a horizontal flip when the .flipped class is added to .flip-card-inner */
+.flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Hide the back side during flip */
+  backface-visibility: hidden;
+  border-radius: 8px; /* Match parent */
+  display: flex; /* Use flexbox for centering content */
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: 1.5rem;
-  margin: 3rem 0;
+  padding: 15px; /* Updated: Changed padding to 15px */
+  box-sizing: border-box; /* Include padding in element's total width and height */
 }
 
-.logo-showcase img {
-  max-width: 220px;
-  height: auto;
-  border: 1px solid #eee;
-  padding: 1rem;
-  background: #fff;
-  border-radius: 8px;
+/* Style the front side */
+.flip-card-front {
+  background-color: #ffffff; /* Assuming white background for cards, adjust if needed */
+  color: #18150d; /* HEADING color for text */
+  z-index: 2;
 }
 
-/* Abstract logo note */
-.abstract-logo-note {
-  background: #f4f1ec;
-  padding: 2rem;
-  border-left: 5px solid #aa9144;
-  font-style: italic;
-  margin: 2rem 0;
-  font-size: 16px;
+/* Style the back side */
+.flip-card-back {
+  background-color: #eddba5; /* BG COLOR for the back */
+  color: #18150d; /* HEADING color for text */
+  transform: rotateY(180deg); /* Start rotated for the back side */
+  padding: 15px; /* Updated: Changed padding to 15px */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* This centers the flex items */
+  text-align: justify; /* Updated: Justify text orientation */
+  line-height: 1.6; /* Improve readability */
 }
 
-/* Fade-in animation for scroll */
-.fade-in {
-  opacity: 0;
-  transition: opacity 0.8s ease-in;
+/* Specific adjustments for text inside the back of the card to justify it */
+.flip-card-back h3,
+.flip-card-back p {
+  text-align: center; /* Keep heading centered or adjust as preferred */
+  width: 100%; /* Ensure text blocks take full width to justify effectively */
 }
 
-.fade-in.visible {
-  opacity: 1;
+.flip-card-back h3 {
+  color: #18150d; /* Heading color */
+  margin-bottom: 10px; /* Kept at 10px for title */
+  font-size: 22px; /* Font size for header */
 }
 
-/* Responsive adjustment for carousel */
-@media (max-width: 800px) {
-  .carousel {
-    flex-direction: column;
-    gap: 2rem;
+.flip-card-back p {
+  font-size: 14px; /* Font size for paragraph */
+  margin-bottom: 15px; /* Updated: Changed margin-bottom to 15px */
+}
+
+/* Adjustments for existing service-block elements within flip cards */
+.flip-card-front .service-block {
+  box-shadow: none; /* Remove existing shadow as flip-card handles it */
+  padding: 0; /* Remove internal padding if flip-card-front has it */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Ensure text-primary applies the correct color */
+.text-primary {
+  color: #aa9144 !important; /* Your DEFAULT color for icons */
+}
+
+/* Style for the "Learn More" button on the back of the card */
+.flip-card-back .btn-default {
+  margin-top: 5px; /* Kept at 5px for button */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 767px) {
+  .flip-card {
+      height: 380px; /* Slightly taller for mobile content */
   }
-
-  .card {
-    min-width: auto;
-    width: 100%;
+  .flip-card-back p {
+      font-size: 14px; /* Ensure 14px on mobile too */
   }
 }
-
