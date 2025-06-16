@@ -124,11 +124,11 @@
                                     </div>
                                     <div class="col-md-6">
                                         <label class="control-label" for="phone">phone</label>
-                                        <input type="text" name="phone" id="phone" placeholder="" class="form-control">
+                                        <input type="phone" name="phone" id="phone" placeholder="" class="form-control">
                                     </div>
                                     <div class="col-md-6">
                                         <label class="control-label" for="email">email</label>
-                                        <input type="text" name="email" id="email" placeholder="" class="form-control">
+                                        <input type="email" name="email" id="email" placeholder="" class="form-control">
                                     </div>
                                     <div class="col-md-6">
                                         <label class="control-label" for="Subject">Subject</label>
@@ -142,7 +142,7 @@
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <button id="singlebutton" name="singlebutton" class="btn btn-default">send message</button>
+                                            <button id="singlebutton" name="singlebutton" class="btn btn-default" type="submit">send message</button>
                                         </div>
                                     </div>
                                 </div>
@@ -228,5 +228,17 @@
     <script src="js/jquery.sticky.js"></script>
     <script src="js/sticky-header.js"></script>
 </body>
+
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "sBwdVfGSJVNFh56es",
+      });
+   })();
+</script>
+<script src="contact.js"></script>
 
 </html>
