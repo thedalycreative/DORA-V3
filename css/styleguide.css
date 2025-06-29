@@ -1,0 +1,47 @@
+/* DORA BRAND STYLE SHEET */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #fffdf9;
+    color: #18150d;
+  }
+  h1, h2, h3, h4 {
+    font-family: 'Montserrat', sans-serif;
+    color: #18150d;
+  }
+  .container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 60px 15px;
+  }
+  .accordion {
+    background-color: #f4f1ec;
+    padding: 18px;
+    font-size: 18px;
+    border-radius: 6px;
+  }
+  .accordion.active, .accordion:hover {
+    background-color: #e3d6c2;
+  }
+  .accordion:after {
+    content: '\002B';
+    float: right;
+  }
+  .accordion.active:after {
+    content: '\2212';
+  }
+  .panel {
+    padding: 15px;
+    background: white;
+    border-left: 5px solid #aa9144;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+  .img-fluid {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  
+  
+  
